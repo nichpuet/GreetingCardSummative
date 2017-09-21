@@ -43,7 +43,7 @@ namespace GreetingCardSummative
             {
                 formGraphics.Clear(Color.Black);
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
-                for(int x = 1; x <= 4S; x++)
+                for(int x = 1; x <= 4; x++)
                 {
                     formGraphics.FillEllipse(starBrush, 334, 49, 10, 10);
                     formGraphics.DrawLine(starPen, 339, 54, 308, 99);
