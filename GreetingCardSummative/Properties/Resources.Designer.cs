@@ -68,5 +68,14 @@ namespace GreetingCardSummative.Properties {
                 return ResourceManager.GetStream("Startup_Noise", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream up {
+            get {
+                return ResourceManager.GetStream("up", resourceCulture);
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace GreetingCardSummative
     {
         
         int flag = 0;
+        int flagStar = 0;
 
         public GreetingCardSummative()
         {
@@ -26,6 +27,8 @@ namespace GreetingCardSummative
         {
             //Establishes the ability to create graphics, the pen, the brush, 4 fonts, and 2 soundplayers
             Graphics formGraphics = this.CreateGraphics();
+            SolidBrush starBrush = new SolidBrush(Color.Snow);
+            Pen starPen = new Pen(Color.Snow,1);
             Pen drawPen = new Pen(Color.Red, 10);
             SolidBrush drawBrush = new SolidBrush(Color.Red);
             Font drawFont = new Font("Ubuntu", 16, FontStyle.Bold);
@@ -33,14 +36,65 @@ namespace GreetingCardSummative
             Font smallFont = new Font("Ubuntu", 8, FontStyle.Regular);
             Font medFont = new Font("Ubuntu", 24, FontStyle.Underline);
             SoundPlayer loadSound = new SoundPlayer(Properties.Resources.Startup_Noise);
+            SoundPlayer starSound = new SoundPlayer(Properties.Resources.up);
             //add another sound effect
     
             if (flag == 1)
             {
                 formGraphics.Clear(Color.Black);
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
+                for(int x = 1; x <= 4S; x++)
+                {
+                    formGraphics.FillEllipse(starBrush, 334, 49, 10, 10);
+                    formGraphics.DrawLine(starPen, 339, 54, 308, 99);
+                    formGraphics.FillEllipse(starBrush, 303, 94, 10, 10);
+                    formGraphics.DrawLine(starPen, 278, 127, 308, 99);
+                    formGraphics.FillEllipse(starBrush, 273, 122, 10, 10);
+                    formGraphics.DrawLine(starPen, 241, 115, 278, 127);
+                    formGraphics.FillEllipse(starBrush, 236, 110, 10, 10);
+                    formGraphics.DrawLine(starPen, 203, 80, 241, 115);
+                    formGraphics.FillEllipse(starBrush, 198, 75, 10, 10);
+                    formGraphics.DrawLine(starPen, 278, 127, 248, 181);
+                    formGraphics.FillEllipse(starBrush, 243, 176, 10, 10);
+                    formGraphics.DrawLine(starPen, 241, 115, 195, 173);
+                    formGraphics.FillEllipse(starBrush, 190, 168, 10, 10);
+                    formGraphics.DrawLine(starPen, 196, 173, 241, 225);
+                    formGraphics.DrawLine(starPen, 241, 225, 248, 181);
+                    formGraphics.FillEllipse(starBrush, 236, 220, 15, 15);
+                    formGraphics.DrawLine(starPen, 241, 225, 141, 238);
+                    formGraphics.FillEllipse(starBrush, 136, 233, 10, 10);
+                    formGraphics.DrawLine(starPen, 141, 238, 92, 255);
+                    formGraphics.FillEllipse(starBrush, 87, 250, 10, 10);
+                    formGraphics.DrawLine(starPen, 194, 172, 141, 182);
+                    formGraphics.FillEllipse(starBrush, 136, 177, 10, 10);
+                    formGraphics.DrawLine(starPen, 65, 210, 141, 182);
+                    formGraphics.FillEllipse(starBrush, 60, 205, 10, 10);
+
+                    Thread.Sleep(1000);
+                    starSound.Play();
+                    if (flagStar == 0)
+                    {
+                        starBrush.Color = Color.Green;
+                    }
+                    if (flagStar == 1)
+                    {
+                        starBrush.Color = Color.MistyRose;
+                    }
+                    if (flagStar == 2)
+                    {
+                        starBrush.Color = Color.MediumAquamarine;
+                    }
+                    if (flagStar == 3)
+                    {
+                        starBrush.Color = Color.Snow;
+                    }
+                    flagStar += 1;
+                }
+               
                 
+
             }
+
             else
             {   //Plays the windows XP startup noise
                 loadSound.Play();
