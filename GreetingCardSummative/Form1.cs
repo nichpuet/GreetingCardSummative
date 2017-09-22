@@ -16,7 +16,7 @@ namespace GreetingCardSummative
     {
         
         int flag = 0;
-        int flagStar = 0;
+  
 
         public GreetingCardSummative()
         {
@@ -41,9 +41,11 @@ namespace GreetingCardSummative
     
             if (flag == 1)
             {
+                int flagStar = 0;
+
                 formGraphics.Clear(Color.Black);
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
-                for(int x = 1; x <= 4; x++)
+                for(int x = 1; x <= 5; x++)
                 {
                     formGraphics.FillEllipse(starBrush, 334, 49, 10, 10);
                     formGraphics.DrawLine(starPen, 339, 54, 308, 99);
@@ -70,6 +72,7 @@ namespace GreetingCardSummative
                     formGraphics.DrawLine(starPen, 65, 210, 141, 182);
                     formGraphics.FillEllipse(starBrush, 60, 205, 10, 10);
 
+                    //
                     Thread.Sleep(1000);
                     starSound.Play();
                     if (flagStar == 0)
@@ -78,7 +81,7 @@ namespace GreetingCardSummative
                     }
                     if (flagStar == 1)
                     {
-                        starBrush.Color = Color.MistyRose;
+                        starBrush.Color = Color.Red;
                     }
                     if (flagStar == 2)
                     {
@@ -90,8 +93,15 @@ namespace GreetingCardSummative
                     }
                     flagStar += 1;
                 }
-               
-                
+
+                //draws the info paragraph and has a delay to writing the lines
+                formGraphics.DrawString("Virgo Constellation", drawFont, starBrush, 15, 270);
+                Thread.Sleep(500);
+                formGraphics.DrawString("Virgo is one of the zodiac representing the virgin. In horoscopes it is used", smallFont, starBrush, 20, 300);
+                Thread.Sleep(500);
+                formGraphics.DrawString("to represent people born between August 22nd and September 22nd. It is  ", smallFont, starBrush, 15, 320);
+                Thread.Sleep(500);
+                formGraphics.DrawString("also the second largest constellation in the sky.", smallFont, starBrush, 15, 340);
 
             }
 
