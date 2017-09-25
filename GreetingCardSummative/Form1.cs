@@ -14,10 +14,9 @@ namespace GreetingCardSummative
 {
     public partial class GreetingCardSummative : Form
     {
-        
+        //sets flag to tell if you should go to the title page or the info page
         int flag = 0;
   
-
         public GreetingCardSummative()
         {
             InitializeComponent();
@@ -47,49 +46,56 @@ namespace GreetingCardSummative
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
                 for(int x = 1; x <= 5; x++)
                 {
-                    formGraphics.FillEllipse(starBrush, 334, 49, 10, 10);
+                   //draws the lines between the circles
                     formGraphics.DrawLine(starPen, 339, 54, 308, 99);
-                    formGraphics.FillEllipse(starBrush, 303, 94, 10, 10);
                     formGraphics.DrawLine(starPen, 278, 127, 308, 99);
-                    formGraphics.FillEllipse(starBrush, 273, 122, 10, 10);
                     formGraphics.DrawLine(starPen, 241, 115, 278, 127);
-                    formGraphics.FillEllipse(starBrush, 236, 110, 10, 10);
                     formGraphics.DrawLine(starPen, 203, 80, 241, 115);
-                    formGraphics.FillEllipse(starBrush, 198, 75, 10, 10);
                     formGraphics.DrawLine(starPen, 278, 127, 248, 181);
-                    formGraphics.FillEllipse(starBrush, 243, 176, 10, 10);
                     formGraphics.DrawLine(starPen, 241, 115, 195, 173);
-                    formGraphics.FillEllipse(starBrush, 190, 168, 10, 10);
                     formGraphics.DrawLine(starPen, 196, 173, 241, 225);
                     formGraphics.DrawLine(starPen, 241, 225, 248, 181);
-                    formGraphics.FillEllipse(starBrush, 236, 220, 15, 15);
                     formGraphics.DrawLine(starPen, 241, 225, 141, 238);
-                    formGraphics.FillEllipse(starBrush, 136, 233, 10, 10);
                     formGraphics.DrawLine(starPen, 141, 238, 92, 255);
-                    formGraphics.FillEllipse(starBrush, 87, 250, 10, 10);
                     formGraphics.DrawLine(starPen, 194, 172, 141, 182);
-                    formGraphics.FillEllipse(starBrush, 136, 177, 10, 10);
                     formGraphics.DrawLine(starPen, 65, 210, 141, 182);
+                    //draws all the circles
                     formGraphics.FillEllipse(starBrush, 60, 205, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 334, 49, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 303, 94, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 273, 122, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 236, 110, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 198, 75, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 243, 176, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 190, 168, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 236, 220, 15, 15);
+                    formGraphics.FillEllipse(starBrush, 136, 233, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 87, 250, 10, 10);
+                    formGraphics.FillEllipse(starBrush, 136, 177, 10, 10);
 
-                    //
+                    //tells the program to wait 1 second then redraw the stars in either green,red, medium aquamarine, or snow depending on which loop its on.
+                    //also plays a quick sound each time the colour changes.
                     Thread.Sleep(1000);
                     starSound.Play();
                     if (flagStar == 0)
                     {
                         starBrush.Color = Color.Green;
+                        starPen.Color = Color.Yellow;
                     }
                     if (flagStar == 1)
                     {
                         starBrush.Color = Color.Red;
+                        starPen.Color = Color.Snow;
                     }
                     if (flagStar == 2)
                     {
                         starBrush.Color = Color.MediumAquamarine;
+                        starPen.Color = Color.Yellow;
                     }
                     if (flagStar == 3)
                     {
                         starBrush.Color = Color.Snow;
+                        starPen.Color = Color.Snow;
                     }
                     flagStar += 1;
                 }
@@ -103,6 +109,8 @@ namespace GreetingCardSummative
                 Thread.Sleep(500);
                 formGraphics.DrawString("also the second largest constellation in the sky.", smallFont, starBrush, 15, 340);
 
+                //tells the program to go back to the title page next time the window is clicked
+                flag -= 1;
             }
 
             else
