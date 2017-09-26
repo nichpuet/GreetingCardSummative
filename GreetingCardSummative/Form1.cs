@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Nicholas Puetz | Greeting Card Summative | 26/09/2017
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace GreetingCardSummative
 
         private void GreetingCardSummative_Click(object sender, EventArgs e)
         {
-            //Establishes the ability to create graphics, the pen, the brush, 4 fonts, and 2 soundplayers
+            //Establishes the ability to create graphics, the pens, the brushes, 4 fonts, and 2 soundplayers
             Graphics formGraphics = this.CreateGraphics();
             SolidBrush starBrush = new SolidBrush(Color.Snow);
             Pen starPen = new Pen(Color.Snow,1);
