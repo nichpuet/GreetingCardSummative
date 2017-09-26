@@ -37,12 +37,22 @@ namespace GreetingCardSummative
             Font medFont = new Font("Ubuntu", 24, FontStyle.Underline);
             SoundPlayer loadSound = new SoundPlayer(Properties.Resources.Startup_Noise);
             SoundPlayer starSound = new SoundPlayer(Properties.Resources.up);
+            Random rand = new Random();
     
             if (flag == 1)
             {
                 int flagStar = 0;
 
                 formGraphics.Clear(Color.Black);
+
+                //draws stars in random locations, making each time the program runs unique
+                for (int y = 1; y <= 31; y++)
+                {
+                    int randStarX = rand.Next(400);
+                    int randStarY = rand.Next(250);
+                    formGraphics.FillEllipse(starBrush, randStarX, randStarY, 10, 10);
+                }
+
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
                 for(int x = 1; x <= 5; x++)
                 {
