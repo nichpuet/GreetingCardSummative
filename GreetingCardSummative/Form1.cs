@@ -37,7 +37,6 @@ namespace GreetingCardSummative
             Font medFont = new Font("Ubuntu", 24, FontStyle.Underline);
             SoundPlayer loadSound = new SoundPlayer(Properties.Resources.Startup_Noise);
             SoundPlayer starSound = new SoundPlayer(Properties.Resources.up);
-            //add another sound effect
     
             if (flag == 1)
             {
