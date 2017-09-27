@@ -50,7 +50,7 @@ namespace GreetingCardSummative
                 {
                     int randStarX = rand.Next(400);
                     int randStarY = rand.Next(250);
-                    formGraphics.FillEllipse(starBrush, randStarX, randStarY, 10, 10);
+                    formGraphics.FillEllipse(starBrush, randStarX, randStarY, 5, 5);
                 }
 
                 //draw ellipses and lines for virgo constalation and write text that scrolls in from the bottom
@@ -150,6 +150,7 @@ namespace GreetingCardSummative
                 formGraphics.DrawString("By Nick Puetz | 20/09/17", smallFont, drawBrush, 15, 325);
 
                 flag += 1;
+
             }
            
         }
